@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function calculate(){
+            p=document.getElementById("p").value;
+            r=document.getElementById("r").value;
+            n=document.getElementById("n").value;
+            result=document.getElementById("result");
+            result.innerHTML="the interest is" +(p*n*r/100);
+    
+        }
+    
+    </script>
+</head>
+<body>
+    Principal Amount: <input id="p"><br></br>
+    Rate of interest: <input id="r"><br></br>
+    No of years: <input id="n"><br></br>
+    <button onclick="">calculate</button>
+    <p id="result"></p>
+</body>
+
+</html>
