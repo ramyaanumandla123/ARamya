@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Data Types</title>
+    <style>
+        body {
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEhgckxmJCQHXU9PFZv_3SCuatp6SDL7jeNw&s');background-repeat: no-repeat;background-size: 100%;
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+        }
+        .datatype {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 >JavaScript Data Types</h2>
+        <div class="datatype" id="number"></div>
+        <div class="datatype" id="string"></div>
+        <div class="datatype" id="boolean"></div>
+        <div class="datatype" id="array"></div>
+        <div class="datatype" id="object"></div>
+        <div class="datatype" id="undefined"></div>
+        <div class="datatype" id="null"></div>
+    </div>
+
+    <script>
+        // Number
+        let age = 25;
+        document.getElementById('number').innerText = `Number: ${age}`;
+
+        // String
+        let name = "Alice";
+        document.getElementById('string').innerText = `String: ${name}`;
+
+        // Boolean
+        let isStudent = true;
+        document.getElementById('boolean').innerText = `Boolean: ${isStudent}`;
+
+        // Array
+        let colors = ["red", "green", "blue"];
+        document.getElementById('array').innerText = `Array: ${colors.join(', ')}`;
+
+        // Object
+        let person = {
+            name: "Alice",
+            age: 25,
+            isStudent: true
+        };
+        document.getElementById('object').innerText = `Object: ${JSON.stringify(person)}`;
+
+        // Undefined
+        let undefinedVar;
+        document.getElementById('undefined').innerText = `Undefined: ${undefinedVar}`;
+
+        // Null
+        let nullVar = null;
+        document.getElementById('null').innerText = `Null: ${nullVar}`;
+    </script>
+</body>
+</html>
