@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculate Square</title>
+    <style>
+        body {
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQM3OrVzegan9swOKRAqgFwSs0QP1z3ggf90w&s');
+     margin: 20px;background-repeat: no-repeat;
+        }
+        .container {
+            color:chocolate;
+            max-width: 300px;
+            margin: auto;
+        }
+        button{
+            background-color:chocolate;
+        }
+        .result {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Calculate the Square of a Number</h2>
+        <label for="numberInput">Enter a number:</label>
+        <input type="number" id="numberInput" />
+        <button onclick="calculateSquare()">Calculate</button>
+        <p class="result" id="result"></p>
+    </div>
+
+    <script>
+        function calculateSquare() {
+            let number = document.getElementById('numberInput').value;
+            let square = number * number;
+            document.getElementById('result').innerText = `The square of ${number} is ${square}`;
+        }
+    </script>
+</body>
+</html>
