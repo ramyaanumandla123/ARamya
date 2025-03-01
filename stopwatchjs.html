@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stopwatch</title>
+</head>
+<body style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOZFLWC9zx3EVBXguywiWkP4H5YA5F40D7uQ&s');background-repeat: no-repeat;background-size: 50%;background-position-x: center ;">
+    <h1  style="color:darkred;font-style: italic">Stopwatch</h1>
+    <div id="display">00:00:00</div>
+    <button onclick="start()" style="background-color:purple;font-style: italic">Start</button>
+    <button onclick="stop()" style="background-color:green;font-style: italic">Stop</button>
+    <button onclick="reset()" style="background-color:coral;font-style: italic">Reset</button>
+    <script>
+        var timer;
+        var isRunning = false;
+        var startTime;
+        var elapsedTime = 0;
+
+        function start() {
+            if (!isRunning) {
+                startTime = Date.now() - elapsedTime;
+                timer = setInterval(updateDisplay, 1000);
+                isRunning = true;
+            }
+        }
+
+        function stop() {
+            if (isRunning) {
+                clearInterval(timer);
+                elapsedTime = Date.now() - startTime;
+                isRunning = false;
+            }
+        }
+
+        function reset() {
+            clearInterval(timer);
+            elapsedTime = 0;
+            isRunning = false;
+            updateDisplay();
+        }
+
+        function updateDisplay() {
+            var time = Date.now() - startTime;
+            var hours = Math.floor(time / (1000 * 60 * 60) % 24);
+            var minutes = Math.floor(time / (1000 * 60) % 60);
+            var seconds = Math.floor(time / 1000 % 60);
+
+            document.getElementById('display').innerText = 
+                ('0' + hours).slice(-2) + ':' +
+                ('0' + minutes).slice(-2) + ':' +
+                ('0' + seconds).slice(-2);
+        }
+    </script>
+</body>
+</html>
