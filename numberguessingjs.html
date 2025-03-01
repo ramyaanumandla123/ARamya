@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Number Guessing Game</title>
+</head>
+<body style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdHI273WmyMor3UFr-JcYp83RAt_J9v4T-Qg&s');background-size: 100%;">
+    
+    
+    <button onclick="startGame()">Start Game</button>
+    <div id="game"></div>
+
+    <script>
+        function startGame() {
+            let gameDiv = document.getElementById('game');
+            gameDiv.innerHTML = '';
+
+            let randomNum = Math.floor(Math.random() * 100) + 1;
+            let attempts = 0;
+            let maxAttempts =3;
+            let guess;
+
+            while (attempts < maxAttempts) {
+                guess = prompt('Guess a number between 1 and 100:');
+                guess = parseInt(guess);
+                attempts++;
+
+                if (guess === randomNum) {
+                    gameDiv.innerHTML = `<p>Congratulations! You guessed the number ${randomNum} in ${attempts} attempts.</p>`;
+                    break;
+                } else if (guess < randomNum) {
+                    alert('Too low! Try again.');
+                } else {
+                    alert('Too high! Try again.');
+                }
+            }
+
+            if (guess !== randomNum) {
+                gameDiv.innerHTML = `<p>Sorry! You've used all ${maxAttempts} attempts. The number was ${randomNum}.</p>`;
+            }
+        }
+    </script>
+</body>
+</html>
