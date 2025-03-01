@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!-- saved from url=(0037)http://127.0.0.1:5500/FNPROGRAMS.HTML -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script>
+    function calculate()
+    {
+        p = document.getElementById("p").value;
+        n = document.getElementById("n").value;
+        r = document.getElementById("r").value;
+        result = document.getElementById("result");
+        result.innerHTML = "The interest is " + (p*n*r/100);
+    }
+    function calculate2()
+    {
+        b = document.getElementById("b").value;
+        h= document.getElementById("h").value;
+        area= document.getElementById("area");
+        area.innerHTML = "The area of triangle is " + (0.5*b*h);
+    }
+</script>
+<style>
+    
+    h3{color:blue}
+    span{color:blueviolet}
+    button{color:brown}
+    p{color:rgb(20, 76, 180)}
+</style></head>
+
+<body style="text-align:center;background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbDODJGWI5rcm3v7cExTfQK695Y9_b0JPj9g&amp;s)">
+<h3>Simple Interest Calculation</h3>
+    <span>
+Amount:<input id="p"><br>
+Rate:<input id="r"><br>
+No. of Years: <input id="n"><br>
+</span>
+<button onclick="calculate()">Calculate</button>
+<p id="result">The interest is 1200</p>
+<h3>area of triangle</h3>
+    <span>
+Base:<input id="b"><br>
+Height:<input id="h"><br>
+</span>
+<button onclick="calculate2()">submit</button>
+<p id="area"></p>
+
+
+</body></html>
